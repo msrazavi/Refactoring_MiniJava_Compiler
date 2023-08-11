@@ -3,13 +3,13 @@ package codeGenerator;
 import scanner.token.Token;
 
 public class CodeGeneratorFacade {
-    CodeGenerator codeGenerator = new CodeGenerator();
+    private final CodeGenerator codeGenerator = new CodeGenerator();
 
     public void printMemory() {
-        codeGenerator.printMemory();
+        this.codeGenerator.printMemory();
     }
 
     public void semanticFunction(int func, Token next) {
-        codeGenerator.semanticFunction(func, next);
+        this.codeGenerator.semanticFunction(func, next);
     }
 }
