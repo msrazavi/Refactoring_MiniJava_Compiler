@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import Log.Log;
-import codeGenerator.CodeGenerator;
 import codeGenerator.CodeGeneratorFacade;
 import errorHandler.ErrorHandler;
 import scanner.lexicalAnalyzer;
