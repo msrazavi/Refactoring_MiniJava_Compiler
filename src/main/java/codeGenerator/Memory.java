@@ -33,8 +33,11 @@ public class Memory {
         return lastDataAddress - dataSize;
     }
 
-    public int saveMemory() {
+    public void addAddressToCodeBlock(){
         codeBlock.add(new _3AddressCode());
+    }
+
+    public int saveMemory() {
         return codeBlock.size() - 1;
     }
 
