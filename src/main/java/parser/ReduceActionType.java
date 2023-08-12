@@ -1,11 +1,5 @@
 package parser;
 
-import Log.Log;
-import codeGenerator.CodeGeneratorFacade;
-import scanner.token.Token;
-
-import java.util.ArrayList;
-import java.util.Stack;
 
 public class ReduceActionType implements ActType{
     @Override
