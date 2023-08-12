@@ -13,24 +13,8 @@ public class Address {
         return num;
     }
 
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public AddressTypeInterface getAddressType() {
-        return addressType;
-    }
-
-    public void setAddressType(AddressTypeInterface addressType) {
-        this.addressType = addressType;
-    }
-
     public codeGenerator.varType getVarType() {
         return varType;
-    }
-
-    public void setVarType(codeGenerator.varType varType) {
-        this.varType = varType;
     }
 
     public Address(int num, varType varType, AddressTypeInterface addressType) {

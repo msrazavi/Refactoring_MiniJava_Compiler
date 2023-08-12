@@ -5,8 +5,8 @@ package semantic.symbol;
  */
 
 public class Symbol {
-    public SymbolType type;
-    public int address;
+    public final SymbolType type;
+    public final int address;
 
     public Symbol(SymbolType type, int address) {
         this.type = type;

@@ -13,11 +13,11 @@ import scanner.ScannerFacade;
 import scanner.token.Token;
 
 public class Parser {
-    private ArrayList<Rule> rules;
-    private Stack<Integer> parsStack;
+    private final ArrayList<Rule> rules;
+    private final Stack<Integer> parsStack;
     private ParseTable parseTable;
     private ScannerFacade scannerFacade;
-    private CodeGeneratorFacade codeGeneratorFacade;
+    private final CodeGeneratorFacade codeGeneratorFacade;
 
     public Parser() {
         parsStack = new Stack<Integer>();

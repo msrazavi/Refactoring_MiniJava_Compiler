@@ -1,10 +1,10 @@
 package parser;
 
 public class Action {
-    public ActType action;
+    public final ActType action;
     //if action = shift : number is state
     //if action = reduce : number is number of rule
-    public int number;
+    public final int number;
 
     public Action(ActType action, int number) {
         this.action = action;

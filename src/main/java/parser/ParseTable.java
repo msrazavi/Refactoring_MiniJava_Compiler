@@ -11,8 +11,8 @@ import java.util.Map;
  */
 
 public class ParseTable {
-    private ArrayList<Map<Token, Action>> actionTable;
-    private ArrayList<Map<NonTerminal, Integer>> gotoTable;
+    private final ArrayList<Map<Token, Action>> actionTable;
+    private final ArrayList<Map<NonTerminal, Integer>> gotoTable;
 
     public ParseTable(String jsonTable) throws Exception {
         jsonTable = jsonTable.substring(2, jsonTable.length() - 2);
@@ -45,7 +45,7 @@ public class ParseTable {
             actionTable.add(new HashMap<Token, Action>());
             gotoTable.add(new HashMap<>());
             for (int j = 1; j < cols.length; j++) {
-                if (!cols[j].equals("")) {
+                if (!cols[j].isEmpty()) {
                     if (cols[j].equals("acc")) {
                         actionTable.get(actionTable.size() - 1).put(terminals.get(j), new Action(new AcceptActionType(), 0));
                     } else if (terminals.containsKey(j)) {
