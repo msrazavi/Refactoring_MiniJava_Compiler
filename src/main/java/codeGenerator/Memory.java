@@ -25,8 +25,11 @@ public class Memory {
         return lastTempIndex - tempSize;
     }
 
-    public int getDateAddress() {
+    public void increaseDataAddress(){
         lastDataAddress += dataSize;
+    }
+
+    public int getDateAddress() {
         return lastDataAddress - dataSize;
     }
 
