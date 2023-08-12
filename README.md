@@ -26,10 +26,16 @@
 ![image](https://github.com/msrazavi/Refactoring_MiniJava_Compiler/assets/24840082/f726a50a-0e0c-4449-929a-fc01fed1d231)
 
 8. بازآرایی پنجم: استفاده از Polymorphism به جای شرط:
+   در این بازآرایی درست مانند مورد سوم می‌خواهیم با تبدیل اینام act به کلاس‌هایی که همه اینترفیس یکسانی را پیاده‌سازی می‌کنند، switch-case موجود در کلاس Action را حذف و جایگزین کنیم. به علت عمومی بودن کلاس‌ها، اینترفیس و کلاس‌های پیاده‌کننده‌اش را در فایل‌های جداگانه می‌آوریم.
+   ![image](https://github.com/msrazavi/Refactoring_MiniJava_Compiler/assets/24840082/216ddabf-5f4c-4ddf-88fb-55775fd1e714)
+![image](https://github.com/msrazavi/Refactoring_MiniJava_Compiler/assets/24840082/af59126c-8902-47df-a91d-63df8bd5c0cc)
+![image](https://github.com/msrazavi/Refactoring_MiniJava_Compiler/assets/24840082/44e7b0db-d9d7-4a8a-ab41-3dea85fabe69)
+![image](https://github.com/msrazavi/Refactoring_MiniJava_Compiler/assets/24840082/5e1d124d-f8f0-4c59-95b2-bb387a38e586)
 
-9. بازآرایی ششم: بازآرایی Self Encapsulated Field:
 
-10. بازآرایی هفتم: جدا بودن Query و Modifier:
+10. بازآرایی ششم: بازآرایی Self Encapsulated Field:
+
+11. بازآرایی هفتم: جدا بودن Query و Modifier:
     درست مشابه بازآرایی چهارم که توضیح داده شد، این مشکل در کلاس مموری و تابع saveMemory نیز وجود دارد. در اینجا نیز یک تابع صرفا برای عمل Modify اضافه می‌کنیم و از تابع اصلی حذف می‌کنیم و هر جا که آن تابع فراخوانی می‌شود تابع جدید را نیز فراخوانی می‌کنیم. نکته مهم این است که تعدد توابع مشکلی ندارد بلکه چندوظیفه بودن یک تابع و تعدد انواع وظیفه‌هایش نباید وجود داشته باشد:
     ![image](https://github.com/msrazavi/Refactoring_MiniJava_Compiler/assets/24840082/b4b01a23-53e7-4b7a-92e3-34856d979b3c)
 
