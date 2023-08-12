@@ -51,30 +51,27 @@ public class Parser {
                 Log.print(currentAction.toString());
                 //Log.print("");
 
-                switch (currentAction.action) {
-                    case shift:
+                switch (currentAction.action.typeName()) {
+                    case "SHIFT":
                         parsStack.push(currentAction.number);
                         lookAhead = scannerFacade.getNextToken();
 
                         break;
-                    case reduce:
+                    case "REDUCE":
                         Rule rule = rules.get(currentAction.number);
                         for (int i = 0; i < rule.RHS.size(); i++) {
                             parsStack.pop();
                         }
-
-                        Log.print(/*"state : " +*/ parsStack.peek() + "\t" + rule.LHS);
-//                        Log.print("LHS : "+rule.LHS);
+                        Log.print(parsStack.peek() + "\t" + rule.LHS);
                         parsStack.push(parseTable.getGotoTable(parsStack.peek(), rule.LHS));
-                        Log.print(/*"new State : " + */parsStack.peek() + "");
-//                        Log.print("");
+                        Log.print(parsStack.peek() + "");
                         try {
                             codeGeneratorFacade.semanticFunction(rule.semanticAction, lookAhead);
                         } catch (Exception e) {
                             Log.print("Code Genetator Error");
                         }
                         break;
-                    case accept:
+                    case "ACCEPT":
                         finish = true;
                         break;
                 }
