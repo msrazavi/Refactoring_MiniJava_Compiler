@@ -5,9 +5,9 @@ package codeGenerator;
  */
 
 public class Address {
-    private int num;
-    private AddressTypeInterface addressType;
-    private varType varType;
+    private final int num;
+    private final AddressTypeInterface addressType;
+    private final varType varType;
 
     public int getNum() {
         return num;

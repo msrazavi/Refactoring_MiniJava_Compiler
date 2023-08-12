@@ -16,7 +16,6 @@ public class Parser {
     private final ArrayList<Rule> rules;
     private final Stack<Integer> parsStack;
     private ParseTable parseTable;
-    private ScannerFacade scannerFacade;
     private final CodeGeneratorFacade codeGeneratorFacade;
 
     public Parser() {
@@ -39,7 +38,7 @@ public class Parser {
     }
 
     public void startParse(java.util.Scanner sc) {
-        scannerFacade = new ScannerFacade(sc);
+        ScannerFacade scannerFacade = new ScannerFacade(sc);
         Token lookAhead = scannerFacade.getNextToken();
         boolean finish = false;
         Action currentAction;
@@ -78,21 +77,6 @@ public class Parser {
                 Log.print("");
             } catch (Exception ignored) {
                 ignored.printStackTrace();
-//                boolean find = false;
-//                for (NonTerminal t : NonTerminal.values()) {
-//                    if (parseTable.getGotoTable(parsStack.peek(), t) != -1) {
-//                        find = true;
-//                        parsStack.push(parseTable.getGotoTable(parsStack.peek(), t));
-//                        StringBuilder tokenFollow = new StringBuilder();
-//                        tokenFollow.append(String.format("|(?<%s>%s)", t.name(), t.pattern));
-//                        Matcher matcher = Pattern.compile(tokenFollow.substring(1)).matcher(lookAhead.toString());
-//                        while (!matcher.find()) {
-//                            lookAhead = lexicalAnalyzer.getNextToken();
-//                        }
-//                    }
-//                }
-//                if (!find)
-//                    parsStack.pop();
             }
         }
         if (!ErrorHandler.hasError) codeGeneratorFacade.printMemory();

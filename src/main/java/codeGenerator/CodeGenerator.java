@@ -147,9 +147,6 @@ public class CodeGenerator {
         symbolStack.push(methodName);
     }
 
-    //    public void spid(Token next){
-//        symbolStack.push(next.value);
-//    }
     public void checkID() {
         symbolStack.pop();
         if (ss.peek().getVarType() == varType.Non) {
@@ -292,9 +289,6 @@ public class CodeGenerator {
             ErrorHandler.printError("The type of operands in assign is different ");
         }
 //        }catch (NullPointerException d)
-//        {
-//            d.printStackTrace();
-//        }
         memory.add3AddressCode(Operation.ASSIGN, s1, s2, null);
     }
 
